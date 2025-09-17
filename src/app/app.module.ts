@@ -8,6 +8,8 @@ import { CreatePromocodeComponent } from './create-promocode/create-promocode.co
 import { DeletePromocodeComponent } from './delete-promocode/delete-promocode.component';
 import { ViewPromocodeComponent } from './view-promocode/view-promocode.component';
 import { HttpClientModule } from '@angular/common/http';
+import { SigninComponent } from './signin/signin.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 @NgModule({
@@ -16,7 +18,9 @@ import { HttpClientModule } from '@angular/common/http';
     SidebarComponent,
     CreatePromocodeComponent,
     DeletePromocodeComponent,
-    ViewPromocodeComponent
+    ViewPromocodeComponent,
+    SigninComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,
