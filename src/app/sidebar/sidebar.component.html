@@ -1,0 +1,53 @@
+<div class="sidebar-container" [class.collapsed]="!isHovered">
+  <div class="sidebar" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+    <h2>Administrator Portal</h2>
+    <ul>
+      <li>
+        <a href="#" (click)="toggleMenu('admin')">Admin</a>
+        <ul *ngIf="activeMenu === 'admin'">
+          <li><a href="#">Add New Admin</a></li>
+          <li><a href="#">Modify Admin</a></li>
+          <li><a href="#">Delete Admin</a></li>
+          <li><a href="#">View Admin</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" (click)="toggleMenu('events')">Events</a>
+        <ul *ngIf="activeMenu === 'events'">
+          <li><a href="#">Create New Event</a></li>
+          <li><a href="#">Modify Event</a></li>
+          <li><a href="#">Delete Event</a></li>
+          <li><a href="#">View Events</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" (click)="toggleMenu('location')">Location</a>
+        <ul *ngIf="activeMenu === 'location'">
+          <li><a href="#">Create New Location</a></li>
+          <li><a href="#">Modify Location</a></li>
+          <li><a href="#">Delete Location</a></li>
+          <li><a href="#">View Locations</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" (click)="toggleMenu('promocode')">Promo Code</a>
+        <ul *ngIf="activeMenu === 'promocode'">
+          <li><a routerLink="/create-promocode">Create New</a></li>
+          <li><a routerLink="/delete-promocode">Delete</a></li>
+          <li><a routerLink="/view-promocode">View</a></li>
+        </ul>
+      </li>
+      <li>
+        <a href="#" (click)="toggleMenu('speaker')">Speaker</a>
+        <ul *ngIf="activeMenu === 'speaker'">
+          <li><a href="#">Create New</a></li>
+          <li><a href="#">Modify</a></li>
+          <li><a href="#">Delete</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="collapsed-tab" *ngIf="!isHovered" (mouseenter)="isHovered = true">
+    A
+  </div>
+</div>
