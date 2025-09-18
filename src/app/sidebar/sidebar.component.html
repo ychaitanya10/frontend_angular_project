@@ -1,53 +1,72 @@
-<div class="sidebar-container" [class.collapsed]="!isHovered">
-  <div class="sidebar" (mouseenter)="isHovered = true" (mouseleave)="isHovered = false">
+<div class="sidebar-container">
+  <div class="sidebar">
     <h2>Administrator Portal</h2>
+
+    <!-- Dashboard Link -->
+    <ul class="dashboard-link">
+      <li>
+        <a routerLink="/admin-dashboard" routerLinkActive="active">Dashboard</a>
+      </li>
+    </ul>
+
     <ul>
+      <!-- Admin -->
       <li>
-        <a href="#" (click)="toggleMenu('admin')">Admin</a>
+        <a (click)="toggleMenu('admin')">Admin</a>
         <ul *ngIf="activeMenu === 'admin'">
-          <li><a href="#">Add New Admin</a></li>
-          <li><a href="#">Modify Admin</a></li>
-          <li><a href="#">Delete Admin</a></li>
-          <li><a href="#">View Admin</a></li>
+          <li><a routerLink="/add-admin" routerLinkActive="active">Add Administrator</a></li>
+          <li><a routerLink="/view-admin" routerLinkActive="active">View Administrators</a></li>
         </ul>
       </li>
+
+      <!-- Topics -->
       <li>
-        <a href="#" (click)="toggleMenu('events')">Events</a>
+        <a (click)="toggleMenu('topics')">Topics</a>
+        <ul *ngIf="activeMenu === 'topics'">
+          <li><a routerLink="/add-topic" routerLinkActive="active">Create New Topic</a></li>
+          <li><a routerLink="/modify-topic" routerLinkActive="active">Modify Topic</a></li>
+          <li><a routerLink="/view-topics" routerLinkActive="active">View Topics</a></li>
+        </ul>
+      </li>
+
+      <!-- Events -->
+      <li>
+        <a (click)="toggleMenu('events')">Events</a>
         <ul *ngIf="activeMenu === 'events'">
-          <li><a href="#">Create New Event</a></li>
-          <li><a href="#">Modify Event</a></li>
-          <li><a href="#">Delete Event</a></li>
-          <li><a href="#">View Events</a></li>
+          <li><a routerLink="/add-event" routerLinkActive="active">Create New Event</a></li>
+          <li><a routerLink="/modify-event" routerLinkActive="active">Modify Event</a></li>
+          <li><a routerLink="/delete-event" routerLinkActive="active">Cancel Event</a></li>
+          <li><a routerLink="/view-event" routerLinkActive="active">View Events</a></li>
         </ul>
       </li>
+
+      <!-- Speakers -->
       <li>
-        <a href="#" (click)="toggleMenu('location')">Location</a>
-        <ul *ngIf="activeMenu === 'location'">
-          <li><a href="#">Create New Location</a></li>
-          <li><a href="#">Modify Location</a></li>
-          <li><a href="#">Delete Location</a></li>
-          <li><a href="#">View Locations</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" (click)="toggleMenu('promocode')">Promo Code</a>
-        <ul *ngIf="activeMenu === 'promocode'">
-          <li><a routerLink="/create-promocode">Create New</a></li>
-          <li><a routerLink="/delete-promocode">Delete</a></li>
-          <li><a routerLink="/view-promocode">View</a></li>
-        </ul>
-      </li>
-      <li>
-        <a href="#" (click)="toggleMenu('speaker')">Speaker</a>
+        <a (click)="toggleMenu('speaker')">Speakers</a>
         <ul *ngIf="activeMenu === 'speaker'">
-          <li><a href="#">Create New</a></li>
-          <li><a href="#">Modify</a></li>
-          <li><a href="#">Delete</a></li>
+          <li><a routerLink="/add-speaker" routerLinkActive="active">Create Speaker</a></li>
+          <li><a routerLink="/view-speaker" routerLinkActive="active">View Speakers</a></li>
+        </ul>
+      </li>
+
+      <!-- Location -->
+      <li>
+        <a (click)="toggleMenu('location')">Location</a>
+        <ul *ngIf="activeMenu === 'location'">
+          <li><a routerLink="/add-location" routerLinkActive="active">Add Location</a></li>
+          <li><a routerLink="/modify-location" routerLinkActive="active">Edit Location</a></li>
+          <li><a routerLink="/view-location" routerLinkActive="active">View Locations</a></li>
+        </ul>
+      </li>
+
+      <!-- Promotion Code -->
+      <li>
+        <a (click)="toggleMenu('promocode')">Promotion Code</a>
+        <ul *ngIf="activeMenu === 'promocode'">
+          <li><a routerLink="/create-promocode" routerLinkActive="active">Add Promotion Code</a></li>
+          <li><a routerLink="/view-promocode" routerLinkActive="active">View Promotion Codes</a></li>
         </ul>
       </li>
     </ul>
-  </div>
-  <div class="collapsed-tab" *ngIf="!isHovered" (mouseenter)="isHovered = true">
-    A
   </div>
 </div>

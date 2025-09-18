@@ -1,0 +1,22 @@
+<div class="location-form">
+  <h2>Modify Location</h2>
+
+  <form (ngSubmit)="onSubmit()" #locationForm="ngForm">
+    <div>
+      <label for="city">City:</label>
+      <input type="text" id="city" [(ngModel)]="location.city" name="city" required />
+    </div>
+
+    <div>
+      <label for="state">State:</label>
+      <input type="text" id="state" [(ngModel)]="location.state" name="state" required />
+    </div>
+
+    <div>
+      <label for="description">Description:</label>
+      <textarea id="description" [(ngModel)]="location.description" name="description"></textarea>
+    </div>
+
+    <button type="submit">Update Location</button>
+  </form>
+</div>
